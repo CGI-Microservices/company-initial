@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: company
+  cloud:
+    config:
+      uri: ${vcap.services.service_to_configserver.credentials.uri}
+      
+management:
+  security:
+    enabled: false
+
+security:
+  basic:
+    enabled: false

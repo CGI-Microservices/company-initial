@@ -1,0 +1,9 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+      
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka:start123@eureka-unprocreant-licence.cfapps.io/eureka
