@@ -8,12 +8,15 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
+import org.apache.log4j.Logger;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.NotEmpty;
 
 @Entity
 public class Company {
 
+	private static final Logger logger = Logger.getLogger(CompanyApplication.class);
+	
 	@Id
 	@GenericGenerator(name = "uuid2", strategy = "uuid2")
 	@GeneratedValue(generator = "uuid2")
@@ -31,6 +34,7 @@ public class Company {
 
 	public Company(String name, String[] aliases, String website, String twitter) {
 		super();
+		logger.info("--- Adding a new Company with values: " + name + " " + website + " " + twitter);
 		this.name = name;
 		this.aliases = aliases;
 		this.website = website;
